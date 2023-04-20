@@ -12,7 +12,7 @@ public class Task6 {
         System.out.println("str = " + str);
 
         float floatValue = 12.5F;
-        System.out.println("floatValue = " + floatValue);
+        System.out.println("floatValue = "  + floatValue);
 
 //        TASk-8
         int year= 1491;
