@@ -5,7 +5,7 @@ public class SwitchKullanimi {
         int gun = 8;
         switch (gun) {
             case 1:
-                System.out.println("Pazartesi");
+                System.out.println("Pazartesi3");
                 break;
             case 2:
                 System.out.println("Salı");
