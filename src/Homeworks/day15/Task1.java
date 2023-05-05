@@ -18,10 +18,10 @@ public class Task1 {
         System.out.print("C açısı: ");
         int c = scanner.nextInt();
 
-        int acilarToplami = a+b+c;
-        if (acilarToplami ==UCGEN_IC_ACILAR_TOPLAMI){
+        int acilarToplami = a + b + c;
+        if (acilarToplami == UCGEN_IC_ACILAR_TOPLAMI) {
             System.out.println("Bu şekil üçgendir.");
-        }else {
+        } else {
             System.out.println("Bu şekil bir üçgen değildir");
         }
 
