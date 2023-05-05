@@ -19,17 +19,20 @@ public class Task2 {
         System.out.println("2. Daire ");
         System.out.print("Seçiminiz: ");
         int secim = scanner.nextInt();
-        if (secim == 1) {
-            System.out.print("Lütfen karenin bir kenar uzunluğunu giriniz: ");
-            int kareKenar = scanner.nextInt();
-            kareAlanVeCevre(kareKenar);
-
-        } else if (secim == 2) {
-            System.out.print("Lütfen Yarıçap uzunluğu giriniz: ");
-            int yaricap = scanner.nextInt();
-            daireAlanVeCevre(yaricap);
-        }else {
-            System.out.println("Gerçesiz sayı girdiniz.");
+        switch (secim) {
+            case 1:
+                System.out.print("Lütfen karenin bir kenar uzunluğunu giriniz: ");
+                int kareKenar = scanner.nextInt();
+                kareAlanVeCevre(kareKenar);
+                break;
+            case 2:
+                System.out.print("Lütfen Yarıçap uzunluğu giriniz: ");
+                int yaricap = scanner.nextInt();
+                daireAlanVeCevre(yaricap);
+                break;
+            default:
+                System.out.println("Gerçesiz sayı girdiniz.");
+                break;
         }
     }
 
