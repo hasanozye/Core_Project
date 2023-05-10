@@ -1,6 +1,8 @@
 
 package day19;
 
+import java.util.Scanner;
+
 public class TaskAboutArray {
     public static void main(String[] args) {
         /*
@@ -16,6 +18,10 @@ average?*/
         }
         double average = sum / 12.0;
         System.out.printf("Average = %.2f", average);
+
+        Scanner scanner = new Scanner(System.in);
+        int x =scanner.nextInt();
+
 
 
     }
