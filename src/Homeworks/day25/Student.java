@@ -13,7 +13,7 @@ public class Student {
     public String firstName;
     public String lastName;
     public int age;
-    public int[] grades = {};
+    public int[] grades;
 
 
     public void showInfo() {
@@ -22,8 +22,8 @@ public class Student {
     }
 
     public double getGPA() {
-        int ort;
-        int sum = 0;
+        double ort;
+        double sum = 0.0;
         for (int i = 0; i < grades.length; i++) {
             sum += grades[i];
         }

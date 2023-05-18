@@ -2,10 +2,10 @@ package Homeworks.day25;
 
 public class MainApp {
     public static void main(String[] args) {
-        Student student = new Student("Hasan", "Özyer", 23, new int[]{503, 50, 100});
+        Student student = new Student("Hasan", "Özyer", 23, new int[]{53, 16, 56});
         student.showInfo();
 
-        Student student1 = new Student("Ahmet", "Demirel", 24, new int[]{1003, 50, 40});
+        Student student1 = new Student("Ahmet", "Demirel", 24, new int[]{13, 52, 41});
         student1.showInfo();
 
         double hasan = student.getGPA();
@@ -17,7 +17,7 @@ public class MainApp {
         } else {
             bigger = ahmet;
         }
-        System.out.println(bigger);
+        System.out.printf("%.2f",bigger);
 
     }
 }
