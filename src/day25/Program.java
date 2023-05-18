@@ -11,7 +11,7 @@ public class Program {
 
         Kare kare1 = new Kare();
         kare1.kenar = 7;
-//        kare1.bilgiGoster();
+        kare1.bilgiGoster();
 
         Kare kare2 = new Kare();
         kare2.kenar = 5;
