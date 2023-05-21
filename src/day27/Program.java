@@ -25,7 +25,9 @@ public class Program {
         hayvan.uyu();
 
         System.out.printf("%s %d - %.2f\n",hayvan.ismiGetir(),hayvan.yasiGetir(),hayvan.agirligiGetir());
-        Aslan aslan = new Aslan();
+
+
+
 
 
     }

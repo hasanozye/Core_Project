@@ -7,9 +7,10 @@ public class MainApp {
 
         System.out.println("Çarpım = " + Islem.carp(5, 7));
 
+
         long b1= 5;
         long b2 = 7;
-        Islem.topla(b1,b2);
+//        Islem.topla(b1,b2);
     }
 
 }

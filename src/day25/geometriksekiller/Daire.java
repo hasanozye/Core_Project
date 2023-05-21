@@ -4,5 +4,6 @@ public class Daire {
     public void bilgiGoster(){
         Kare k1 = new Kare();
 
+
     }
 }

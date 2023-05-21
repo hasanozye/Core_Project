@@ -1,4 +1,4 @@
-package Homeworks;
+package Homeworks.day25;
 
 public class newHomework {
     public static void main(String[] args) {

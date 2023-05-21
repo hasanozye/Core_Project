@@ -1,6 +1,4 @@
-package day26;
-
-import day26.math.DortIslem;
+package day26.math;
 
 public class Program {
     public static void main(String[] args) {
