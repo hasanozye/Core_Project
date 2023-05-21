@@ -1,4 +1,4 @@
-package day26.math;
+package day26;
 
 public class Islem {
     /*
