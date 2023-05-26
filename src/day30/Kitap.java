@@ -1,4 +1,4 @@
-package day30.kutuphane;
+package day30;
 
 public class Kitap {
     private boolean gecerliMi = true;

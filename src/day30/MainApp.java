@@ -1,4 +1,4 @@
-package day30.kutuphane;
+package day30;
 
 import java.util.Scanner;
 
