@@ -11,7 +11,9 @@ public class MainApp {
         System.out.printf("Alan Farkı = %.2f\n", alanFarki);
         System.out.printf("Çevre Farkı = %.2f\n", cevreFarki);
 
-
     }
 
 }
+
+
+
