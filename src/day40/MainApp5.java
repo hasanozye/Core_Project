@@ -17,7 +17,7 @@ public class MainApp5 {
         sb.delete(8,15);
         System.out.println(sb);
 
-        System.out.println(new StringBuilder("Ey edip adanada pide ye").reverse());
+        System.out.println(new StringBuilder("Ey edip adanada pixde ye").reverse());
 
 
         System.out.println("sb = " + sb);
