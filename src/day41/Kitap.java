@@ -1,6 +1,6 @@
 package day41;
 
-public class Kitap implements Comparable<Kitap> {
+public class Kitap implements Comparable<Kitap>,Cloneable {
     private String adi;
     private String yazari;
     private Integer sayfa;
@@ -12,6 +12,15 @@ public class Kitap implements Comparable<Kitap> {
         this.adi = adi;
         this.yazari = yazari;
         this.sayfa = sayfa;
+    }
+
+    @Override
+    public Kitap clone() {
+
+        Kitap k = new Kitap(adi,yazari,sayfa);
+
+
+        return k;
     }
 
     public String getAdi() {
