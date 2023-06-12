@@ -1,8 +1,7 @@
 package Homeworks.day47;
 
 public final class Tools {
-    public static void main(String[] args) {
-        /*
+    /*
         Lütfen aşağıda belirtilen görevleri yerine getiriniz.
 Tools isimli final bir sınıf tasarlayınız.
 Bu sınıfta aşağıda belirtilen static metot(lar) bulunacaktır.
@@ -15,35 +14,25 @@ splitWord metodu, main metodu içerisinde iki kez kullanılıp, ekran çıktıs�
 Örnek kullanım;
 INPUT : splitWord("Dursun")
 OUTPUT: Dur-sun
-         */
-        System.out.println(splitWord("hasanbabaa"));
-
-    }
-
+*/
 
 
     public static String splitWord(String word) {
-        String part1 = "";
-        String part2 = "";
-        String bigSt = part1;
-        String index = "" + word.charAt(word.length() / 2);
-        int ind = word.indexOf(index);
+        String result = "";
+        try {
+            int karakterAdedi = word.length();
+            int orta = karakterAdedi / 2;
 
-        if (word.length() % 2 == 0) {
-            part1 = word.substring(0, (word.length() / 2));
-            part2 = word.substring(ind);
-            return part1 + "-" + part2;
-        }
-        if (word.length() % 2 == 1){
-            
+            orta = karakterAdedi % 2 == 0 ? orta : orta + 1;
+            result = word.substring(0, orta) + "-" + word.substring(orta);
+
+        } catch (NullPointerException | StringIndexOutOfBoundsException e) {
+
+            System.err.println("Hata oluştu. Hata: " + e.getMessage());
         }
 
-        if (part2.length() > part1.length()) {
-            return bigSt + "-" + part2;
 
-        }
-
-        return part2 + "-" + part1;
+        return result;
     }
 
 
