@@ -1,4 +1,6 @@
-package day51;
+package day52.showroom;
+
+import day52.showroom.Car;
 
 import java.util.Iterator;
 import java.util.Objects;
