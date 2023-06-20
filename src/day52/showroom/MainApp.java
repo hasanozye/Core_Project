@@ -1,7 +1,6 @@
-package day51;
+package day52.showroom;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class MainApp {
     public static void main(String[] args) {
