@@ -29,6 +29,26 @@ public class ShowRoom implements Iterable<Car> {
         return count;
     }
 
+    public boolean remove(Car car) {
+        int index = 1;
+        for (int i = 0; i < size(); i++) {
+            if (car.equals(cars[i])) {
+                index = i;
+                break;
+            }
+        }
+        return remove(index);
+    }
+
+    public boolean remove(int index) {
+        Objects.checkIndex(index, size());
+        for (int i = index; i < size(); i++) {
+            cars[i] = cars[i + 1];
+            count--;
+        }
+        return true;
+    }
+
     public void add(Car car) {
         cars[count++] = car;
         if (size() == capacity() / 2 + 1) {
