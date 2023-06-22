@@ -1,6 +1,7 @@
 package day52.showroom;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -24,8 +25,10 @@ public class MainApp {
         System.out.println("Capacity : " + showRoom.capacity());
         System.out.println("Size : " + showRoom.size());
 
+
+        Car car2 = new Car(2, "Araba 2");
         showRoom.add(new Car(1, "Araba 1"));
-        showRoom.add(new Car(2, "Araba 2"));
+        showRoom.add(car2);
         showRoom.add(new Car(3, "Araba 3"));
 
 
@@ -41,15 +44,27 @@ public class MainApp {
             System.out.println(item);
         }*/
 
-        /*Iterator<Car> iterator = showRoom.iterator();
+        Iterator<Car> iterator = showRoom.iterator();
         while (iterator.hasNext()) {
 
             System.out.println(iterator.next());
-        }*/
+        }
+
+        System.out.println();
+//        showRoom.remove(1);
+        showRoom.remove(car2);
+
+        System.out.println("Capacity : " + showRoom.capacity());
+        System.out.println("Size : " + showRoom.size());
+
+        iterator = showRoom.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
 
         /*showRoom.forEach(item -> System.out.println(item));*/
 
-        showRoom.forEach(System.out::println);
+//        showRoom.forEach(System.out::println);
 
     }
 }
