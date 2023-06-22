@@ -6,15 +6,14 @@ import java.util.List;
 
 public class Task {
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        List<Integer> numbers = new ArrayList<>(List.of(4, 1, 2, 6, 3, 5, 7, 8, 10, 9));
         List<Integer> oddNumbers = new ArrayList<>();
         List<Integer> evenNumbers = new ArrayList<>();
 
         for (int i = 0; i < numbers.size(); i++) {
             if (numbers.get(i) % 2 == 1) {
                 oddNumbers.add(numbers.get(i));
-            }
-            if (numbers.get(i) % 2 == 0) {
+            } else {
                 evenNumbers.add(numbers.get(i));
             }
         }
@@ -31,6 +30,16 @@ public class Task {
         System.out.println();
 
         System.out.println(evenNumbers);
+
+
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) % 2 != 0) {
+                numbers.remove(i);
+                i--;
+            }
+        }
+
+        System.out.println(numbers);
 
 
     }
