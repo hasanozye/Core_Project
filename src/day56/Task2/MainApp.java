@@ -81,7 +81,7 @@ public class MainApp {
 
 //        Film ortalaması nedir?
 //        TODO: BU SORUYU HESAPLA
-        System.out.println(TEXT_BRIGHT_PURPLE+ "Filmlerin ortalaması: "+TEXT_RESET);
+        System.out.println(TEXT_BRIGHT_PURPLE+ "Filmlerinx ortalaması: "+TEXT_RESET);
 
 
     }
