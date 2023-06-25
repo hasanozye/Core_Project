@@ -3,6 +3,7 @@ package day56.Task2;
 import java.text.Collator;
 import java.util.*;
 import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.text.Collator.IDENTICAL;
@@ -29,7 +30,7 @@ public class MainApp {
 
     public static void main(String[] args) {
 
-        final Collator TR_LANG = Collator.getInstance(new Locale("tr", "TR"));
+        final Collator TR_LANG = Collator.getInstance();
 
         List<Sanatci> sanatcilar = new ArrayList<>(Arrays.asList(
                 new Sanatci("Şener Şen", 73),
@@ -52,42 +53,77 @@ public class MainApp {
 
 
 //        Listedeki toplam Sanatci adedini ekrana yazdırınız.
-        long sanatciAdedi= sanatcilar.stream().count();
-        System.out.println(TEXT_YELLOW + "Sanatçı adedi : " + TEXT_RESET + sanatciAdedi);
+        long toplamSanatci = sanatcilar.stream().count();
+        System.out.println(TEXT_YELLOW + "Toplam Sanatçı adedi : " + TEXT_RESET + toplamSanatci);
+
         System.out.println("---".repeat(30));
 
 //        100'den az filmi olan Sanatci adedi nedir?
-        System.out.println(TEXT_BLUE + "100'den az filmi olan sanatçı listesi;" + TEXT_RESET);
-        sanatcilar.stream().filter(item -> item.filmAdedi() < 100).forEach(System.out::println);
+        long az100 = sanatcilar.stream()
+                .filter(item -> item.filmAdedi() < 100)
+                .count();
+        System.out.println(TEXT_BLUE + "100'den az filmi olan sanatçı adedi: " + TEXT_RESET + az100);
+
         System.out.println("---".repeat(30));
+
+//        100'den az filmi olan Sanatci adedi nedir?
+        System.out.println(TEXT_BLUE + "100'den az filmi olan sanatçı listesi: " + TEXT_RESET);
+        List<Sanatci> az100List = sanatcilar.stream()
+                .filter(x -> x.filmAdedi() < 100)
+                .collect(Collectors.toList());
+        az100List.stream()
+                .forEach(System.out::println);
+
+
+        System.out.println("---".repeat(30));
+
 
 //        Sanatcilari isme göre sıralayıp, ekrana yazdırınız.
         System.out.println(TEXT_GREEN + "İsme göre sıralı sanatçı listesi;" + TEXT_RESET);
         sanatcilar.stream()
                 .sorted(Comparator.comparing(Sanatci::isim, TR_LANG))
                 .forEach(System.out::println);
+
         System.out.println("---".repeat(30));
 
 //        En çok filmi olan sanatçı
-        System.out.println(TEXT_BRIGHT_RED + "En çok filmi olan sanatçı;" + TEXT_RESET);
-        Sanatci sanatci = sanatcilar.stream().max(Comparator.comparing(Sanatci::filmAdedi)).get();
-        System.out.println(sanatci);
+        System.out.print(TEXT_BRIGHT_RED + "En çok filmi olan sanatçı: " + TEXT_RESET);
+        Sanatci enCokFilm = sanatcilar.stream()
+                .max(Comparator.comparing(Sanatci::filmAdedi)).get();
+        System.out.println(enCokFilm);
+
         System.out.println("---".repeat(30));
 
 //        En az filmi olan sanatçı
-        System.out.println(TEXT_BRIGHT_CYAN + "En az filmi olan sanatçı; " + TEXT_RESET);
-        Sanatci sanatci1 = sanatcilar.stream().min(Comparator.comparing(Sanatci::filmAdedi)).get();
-        System.out.println(sanatci1);
+        System.out.print(TEXT_BRIGHT_CYAN + "En az filmi olan sanatçı: " + TEXT_RESET);
+        Sanatci enAzFilm = sanatcilar.stream()
+                .min(Comparator.comparing(Sanatci::filmAdedi)).get();
+        System.out.println(enAzFilm);
+
         System.out.println("---".repeat(30));
 
 //        Film ortalaması nedir?
-//        TODO: BU SORUYU HESAPLA
-        System.out.println(TEXT_BRIGHT_PURPLE+ "Filmlerinx ortalaması: "+TEXT_RESET);
-        int sum = sanatcilar.stream().mapToInt(Sanatci::filmAdedi).sum();
-        double ortalama = (double) sum/sanatciAdedi;
-        System.out.printf("%.2f",ortalama);
+        System.out.print(TEXT_BRIGHT_PURPLE + "Sanatçıların Film ortalaması: " + TEXT_RESET);
+        double ortalamaFilmAdedi = sanatcilar.stream()
+                .mapToDouble(Sanatci::filmAdedi).average().getAsDouble();
+        System.out.println(Math.round(ortalamaFilmAdedi));
+
+        System.out.println("---".repeat(30));
+
+//        Toplam Film adedi nedir?
+        System.out.print(TEXT_BRIGHT_YELLOW + "Sanatçıların Toplam Film Adedi :" + TEXT_RESET);
+        int toplamFilmAdedi = sanatcilar.stream()
+                .mapToInt(Sanatci::filmAdedi).sum();
+        System.out.println(toplamFilmAdedi);
+
+        System.out.println("---".repeat(30));
 
 
+//        İsmi A ile başlayıp 300 ve üzeri filmi olan sanatçı listesi
+        List<Sanatci> aVe300uzeri = sanatcilar.stream().filter(s -> s.isim().startsWith("A") & s.filmAdedi() >= 300).toList();
+        aVe300uzeri.stream().forEach(System.out::println);
+
+        System.out.println("---".repeat(30));
     }
 }
 
