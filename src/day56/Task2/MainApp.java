@@ -2,6 +2,7 @@ package day56.Task2;
 
 import java.text.Collator;
 import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Stream;
 
 import static java.text.Collator.IDENTICAL;
@@ -63,7 +64,7 @@ public class MainApp {
 //        Sanatcilari isme göre sıralayıp, ekrana yazdırınız.
         System.out.println(TEXT_GREEN + "İsme göre sıralı sanatçı listesi;" + TEXT_RESET);
         sanatcilar.stream()
-                .sorted(Comparator.comparing(Sanatci::isim, Collator.getInstance(new Locale("TR", "tr"))))
+                .sorted(Comparator.comparing(Sanatci::isim, TR_LANG))
                 .forEach(System.out::println);
         System.out.println("---".repeat(30));
 
@@ -82,6 +83,9 @@ public class MainApp {
 //        Film ortalaması nedir?
 //        TODO: BU SORUYU HESAPLA
         System.out.println(TEXT_BRIGHT_PURPLE+ "Filmlerinx ortalaması: "+TEXT_RESET);
+        int sum = sanatcilar.stream().mapToInt(Sanatci::filmAdedi).sum();
+        double ortalama = (double) sum/sanatciAdedi;
+        System.out.printf("%.2f",ortalama);
 
 
     }
