@@ -2,11 +2,7 @@ package day56.Task2;
 
 import java.text.Collator;
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static java.text.Collator.IDENTICAL;
 
 public class MainApp {
     public static final String TEXT_RESET = "\u001B[0m";
