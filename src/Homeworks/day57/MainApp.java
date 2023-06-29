@@ -105,6 +105,10 @@ public class MainApp {
                 .forEach(System.out::println);
         System.out.println("-".repeat(30));
 
+        double calisanPersonelYasOrtalamasi = personelList.stream().mapToDouble(Personel::yas).average().getAsDouble();
+        System.out.printf("Çalışan personellerin yaş ortalaması : %.2f\n",calisanPersonelYasOrtalamasi);
+        System.out.println("-".repeat(30));
+
 //        Tüm çalışanların, önce kadınlar, sonra erkekler olacak şekilde isme göre sıralı listesini
 //        a. buldurunuz
 //        b. yazdırınız
@@ -124,11 +128,12 @@ public class MainApp {
 
 //        İsmi S ile başlayan çalışanların maaş toplamını ekrana yazdırınız.
 
-        double sIleBaslyanaMaasToplami = personelList.stream()
+        double sMaasToplami = personelList.stream()
                 .filter(i -> i.adi().startsWith("S"))
                 .mapToDouble(Personel::maas).sum();
 
-        System.out.printf("İsmi S ile başlayan çalışanların maaş toplamı : %.2f", sIleBaslyanaMaasToplami);
+        System.out.printf("İsmi S ile başlayan çalışanların maaş toplamı : %.2f\n", sMaasToplami);
+        System.out.println("-".repeat(30));
 
 
     }
